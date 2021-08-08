@@ -1,1 +1,4 @@
-
+{
+    "mongoURI":
+    "mongodb+srv://jennyK:5gVhAUE6ab0ck38i@cluster0.n0mum.mongodb.net/worksheet3?retryWrites=true&w=majority"
+}
