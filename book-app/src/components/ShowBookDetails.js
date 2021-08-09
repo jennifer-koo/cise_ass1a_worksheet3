@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
-class showBookDetails extends Component {
+class ShowBookDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,11 +13,11 @@ class showBookDetails extends Component {
   }
 
   componentDidMount() {
-    // console.log("Print id: " + this.props.match.params.id);
+     console.log("Print id: " + this.props.match.params.id);
     axios
       .get('http://localhost:8082/api/books/'+this.props.match.params.id)
       .then(res => {
-        // console.log("Print-showBookDetails-API-response: " + res.data);
+        console.log("Print-showBookDetails-API-response: " + res.data);
         this.setState({
           book: res.data
         })
@@ -44,14 +44,14 @@ class showBookDetails extends Component {
     const book = this.state.book;
     let BookItem = <div>
       <table className="table table-hover table-dark">
-        {/* <thead>
+        {<thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">First</th>
             <th scope="col">Last</th>
             <th scope="col">Handle</th>
           </tr>
-        </thead> */}
+        </thead> }
         <tbody>
           <tr>
             <th scope="row">1</th>
@@ -123,9 +123,9 @@ class showBookDetails extends Component {
             </div>
 
           </div>
-            {/* <br />
+             <br />
             <button type="button" class="btn btn-outline-info btn-lg btn-block">Edit Book</button>
-            <button type="button" class="btn btn-outline-danger btn-lg btn-block">Delete Book</button> */}
+            <button type="button" class="btn btn-outline-danger btn-lg btn-block">Delete Book</button> 
 
         </div>
       </div>
@@ -133,4 +133,4 @@ class showBookDetails extends Component {
   }
 }
 
-export default showBookDetails;
+export default ShowBookDetails;
